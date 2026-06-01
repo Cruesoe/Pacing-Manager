@@ -101,6 +101,7 @@ namespace ProgressionPacing
             foreach (var def in DefDatabase<ResearchProjectDef>.AllDefs)
             {
                 if (def.knowledgeCost > 0) continue;
+                if (def.defName.StartsWith("BRM_Emergence_")) continue;
                 if (ModsConfig.IsActive("vanillaexpanded.gravship") && excludeGravdata && def.tab?.defName == "VGE_Gravtech") continue;
                 float multiplier = GetMultiplierForTechLevel(def.techLevel);
                 float newCost = def.baseCost * multiplier;
