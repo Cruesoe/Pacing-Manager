@@ -28,6 +28,7 @@ namespace ProgressionPacing
         private bool questSectionExpanded;
         private int lastSettingsFrame = -100;
         private readonly Dictionary<TechLevel, string> addonBuffers = new Dictionary<TechLevel, string>();
+        private readonly Dictionary<string, string> questBuffers = new Dictionary<string, string>();
         private string powerOutputRoundingBuffer;
 
         private const float NumericFieldHeight = 30f;
@@ -82,7 +83,15 @@ namespace ProgressionPacing
             }
 
             listing.Gap();
-            questSectionExpanded = DrawSectionHeader(listing, "PP_QuestSection".Translate(), questSectionExpanded, null);
+            questSectionExpanded = DrawSectionHeader(listing, "PP_QuestSection".Translate(), questSectionExpanded, () =>
+            {
+                ProgressionPacingModSettings.ResetQuestPacing();
+                questBuffers.Clear();
+            });
+            if (questSectionExpanded)
+            {
+                DrawQuestSection(listing);
+            }
 
             scrollHeight = listing.CurHeight + 24f;
             listing.End();
@@ -199,6 +208,50 @@ namespace ProgressionPacing
             listing.Outdent();
         }
 
+        private void DrawQuestSection(Listing_Standard listing)
+        {
+            ProgressionPacingModSettings.EnsureDictionaries();
+            StorytellerDef storyteller = ProgressionPacingModSettings.CurrentStorytellerDef();
+            if (storyteller == null)
+            {
+                listing.Label("PP_QuestNeedsColony".Translate());
+                return;
+            }
+
+            var entries = ProgressionPacingModSettings.CurrentStorytellerQuestComps().ToList();
+            if (entries.Count == 0)
+            {
+                listing.Label("PP_QuestNoRandomQuests".Translate(storyteller.LabelCap));
+                return;
+            }
+
+            Text.Font = GameFont.Medium;
+            listing.Label(storyteller.LabelCap);
+            Text.Font = GameFont.Small;
+
+            foreach (var entry in entries)
+            {
+                if (entry.cycleCount > 1)
+                {
+                    listing.Label("PP_QuestCycleOnly".Translate(entry.cycleNumber));
+                }
+                QuestPacingValues values = ProgressionPacingModSettings.GetQuestPacingValues(entry.key);
+                DrawQuestFloatField(listing, entry.key + ".onDays", "PP_QuestCycleDays".Translate(), ref values.onDays, 0.1f, 1000f);
+                DrawQuestFloatField(listing, entry.key + ".minSpacingDays", "PP_QuestMinDaysBetween".Translate(), ref values.minSpacingDays, 0f, 1000f);
+                DrawQuestFloatField(listing, entry.key + ".questsEachCycle", "PP_QuestCount".Translate(), ref values.questsEachCycle, 0f, 100f);
+            }
+        }
+
+        private void DrawQuestFloatField(Listing_Standard listing, string bufferKey, string label, ref float value, float min, float max)
+        {
+            if (!questBuffers.TryGetValue(bufferKey, out string buffer) || buffer == null)
+            {
+                buffer = value.ToString();
+            }
+            DrawLabeledNumeric(listing, label + ":", NumericFieldWidth(), ref value, ref buffer, min, max);
+            questBuffers[bufferKey] = buffer;
+        }
+
         private static float NumericFieldWidth()
         {
             return Mathf.Ceil(Text.CalcSize("88888888").x) + NumericFieldPadding;
@@ -225,10 +278,27 @@ namespace ProgressionPacing
             listing.Gap(listing.verticalSpacing);
         }
 
+        private static void DrawLabeledNumeric(Listing_Standard listing, string label, float fieldWidth, ref float value, ref string buffer, float min, float max)
+        {
+            Rect row = listing.GetRect(NumericFieldHeight);
+            if (IsRectVisible(listing, row))
+            {
+                float labelWidth = Text.CalcSize(label).x + 8f;
+                Rect labelRect = new Rect(row.x, row.y, labelWidth, row.height);
+                Rect fieldRect = new Rect(labelRect.xMax, row.y, fieldWidth, row.height);
+                Text.Anchor = TextAnchor.MiddleLeft;
+                Widgets.Label(labelRect, label);
+                Text.Anchor = TextAnchor.UpperLeft;
+                Widgets.TextFieldNumeric(fieldRect, ref value, ref buffer, min, max);
+            }
+            listing.Gap(listing.verticalSpacing);
+        }
+
         public override void WriteSettings()
         {
             base.WriteSettings();
             ProgressionPacingModSettings.UpdateResearchProjectCosts();
+            ProgressionPacingModSettings.UpdateQuestPacing();
         }
 
         public override string SettingsCategory()
@@ -261,6 +331,7 @@ namespace ProgressionPacing
 
                 FixResearchProgress();
                 UpdateSavedMultipliers();
+                ProgressionPacingModSettings.UpdateQuestPacing();
             }
         }
 
@@ -268,6 +339,7 @@ namespace ProgressionPacing
         {
             base.StartedNewGame();
             UpdateSavedMultipliers();
+            ProgressionPacingModSettings.UpdateQuestPacing();
         }
 
         public void UpdateSavedMultipliers()

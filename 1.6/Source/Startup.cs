@@ -9,6 +9,7 @@ namespace ProgressionPacing
         static Startup()
         {
             ProgressionPacingModSettings.UpdateResearchProjectCosts();
+            ProgressionPacingModSettings.UpdateQuestPacing();
         }
     }
 }
