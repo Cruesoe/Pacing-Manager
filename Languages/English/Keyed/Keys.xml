@@ -12,4 +12,11 @@
   <PP_ResearchAddon>Fixed add-on</PP_ResearchAddon>
   <PP_ResearchTotalTechs>Total techs</PP_ResearchTotalTechs>
   <PP_ResearchTotalPoints>Total research points</PP_ResearchTotalPoints>
+  <PP_QuestCycleDays>Days per quest cycle</PP_QuestCycleDays>
+  <PP_QuestMinDaysBetween>Minimum days between quests</PP_QuestMinDaysBetween>
+  <PP_QuestCount>Quests each cycle</PP_QuestCount>
+  <PP_QuestCycleIndex>{0} quest cycle {1}</PP_QuestCycleIndex>
+  <PP_QuestCycleOnly>Quest cycle {0}</PP_QuestCycleOnly>
+  <PP_QuestNeedsColony>Start or load a colony to adjust quests for the current storyteller.</PP_QuestNeedsColony>
+  <PP_QuestNoRandomQuests>{0} does not use random storyteller quests.</PP_QuestNoRandomQuests>
 </LanguageData>
