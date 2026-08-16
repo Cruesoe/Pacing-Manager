@@ -5,4 +5,11 @@
   <PP_ExcludeGravdata>Exclude gravdata</PP_ExcludeGravdata>
   <PP_PowerOutputMultiplier>Global power output multiplier</PP_PowerOutputMultiplier>
   <PP_PowerOutputRoundingMultiple>Round power output values to multiples of:</PP_PowerOutputRoundingMultiple>
+  <PP_ResearchSection>Research</PP_ResearchSection>
+  <PP_PowerSection>Power</PP_PowerSection>
+  <PP_QuestSection>Quests</PP_QuestSection>
+  <PP_ResearchMultiplier>Multiplier</PP_ResearchMultiplier>
+  <PP_ResearchAddon>Fixed add-on</PP_ResearchAddon>
+  <PP_ResearchTotalTechs>Total techs</PP_ResearchTotalTechs>
+  <PP_ResearchTotalPoints>Total research points</PP_ResearchTotalPoints>
 </LanguageData>
