@@ -10,6 +10,7 @@
   <PP_QuestSection>Quests</PP_QuestSection>
   <PP_ResearchMultiplier>Multiplier</PP_ResearchMultiplier>
   <PP_ResearchAddon>Fixed add-on</PP_ResearchAddon>
+  <PP_ResearchRounding>Round to</PP_ResearchRounding>
   <PP_ResearchTotalTechs>Total techs</PP_ResearchTotalTechs>
   <PP_ResearchTotalPoints>Total research points</PP_ResearchTotalPoints>
   <PP_QuestCycleDays>Days per quest cycle</PP_QuestCycleDays>
@@ -19,4 +20,25 @@
   <PP_QuestCycleOnly>Quest cycle {0}</PP_QuestCycleOnly>
   <PP_QuestNeedsColony>Start or load a colony to adjust quests for the current storyteller.</PP_QuestNeedsColony>
   <PP_QuestNoRandomQuests>{0} does not use random storyteller quests.</PP_QuestNoRandomQuests>
+  <PP_CurrentStorytellerNamed>Current Storyteller: {0}</PP_CurrentStorytellerNamed>
+  <PP_CurrentStorytellerTip>These quest settings apply only to the storyteller running this colony. Other storytellers keep their vanilla timing.</PP_CurrentStorytellerTip>
+  <PP_ResearchSectionTip>Change how expensive research is for each tech era.</PP_ResearchSectionTip>
+  <PP_ResearchResetTip>Restore research multipliers, add-ons, rounding, and gravdata exclusion to defaults.</PP_ResearchResetTip>
+  <PP_ResearchEraTip>Settings on this block apply to {0} research projects.</PP_ResearchEraTip>
+  <PP_ResearchTotalsTip>Live count of techs in this era and their total cost with your current multiplier, add-on, and rounding.</PP_ResearchTotalsTip>
+  <PP_ResearchAllTotals>Total: {0} projects    {1} points</PP_ResearchAllTotals>
+  <PP_ResearchAllTotalsTip>Live count of every research project and their combined cost with your current multipliers, add-ons, rounding, and gravdata exclusion.</PP_ResearchAllTotalsTip>
+  <PP_ResearchMultiplierTip>Multiplies the original cost of every research in this era. 100% is vanilla.</PP_ResearchMultiplierTip>
+  <PP_ResearchAddonTip>Adds this many research points to every tech in this era after the multiplier is applied.</PP_ResearchAddonTip>
+  <PP_ResearchRoundingTip>Rounds each tech's final cost to the nearest multiple of this number. 1 means no extra rounding.</PP_ResearchRoundingTip>
+  <PP_ExcludeGravdataTip>Leave Vanilla Gravship Expanded gravdata techs at their original cost.</PP_ExcludeGravdataTip>
+  <PP_PowerSectionTip>Change how much power generators produce.</PP_PowerSectionTip>
+  <PP_PowerResetTip>Restore power output and rounding to defaults.</PP_PowerResetTip>
+  <PP_PowerOutputMultiplierTip>Multiplies generator power output. 100% is vanilla. Buildings that consume power are unchanged.</PP_PowerOutputMultiplierTip>
+  <PP_PowerOutputRoundingTip>Rounds generator output to the nearest multiple of this number. 1 means no extra rounding.</PP_PowerOutputRoundingTip>
+  <PP_QuestSectionTip>Change how often this colony's storyteller offers random quests.</PP_QuestSectionTip>
+  <PP_QuestResetTip>Restore this storyteller's random quest timing to vanilla.</PP_QuestResetTip>
+  <PP_QuestCycleDaysTip>How many days each quest cycle lasts. Longer cycles mean random quests arrive less often.</PP_QuestCycleDaysTip>
+  <PP_QuestMinDaysBetweenTip>Minimum days the storyteller waits between random quests in the same cycle.</PP_QuestMinDaysBetweenTip>
+  <PP_QuestCountTip>How many random quests the storyteller tries to offer in each cycle.</PP_QuestCountTip>
 </LanguageData>

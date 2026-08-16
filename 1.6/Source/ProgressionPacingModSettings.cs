@@ -192,16 +192,26 @@ namespace ProgressionPacing
 
         public static void GetEraTotals(TechLevel techLevel, out int totalTechs, out float totalPoints)
         {
+            GetResearchTotals(techLevel, out totalTechs, out totalPoints);
+        }
+
+        public static void GetResearchTotals(out int totalTechs, out float totalPoints)
+        {
+            GetResearchTotals(null, out totalTechs, out totalPoints);
+        }
+
+        private static void GetResearchTotals(TechLevel? techLevel, out int totalTechs, out float totalPoints)
+        {
             totalTechs = 0;
             totalPoints = 0f;
             EnsureOriginalResearchCosts();
             foreach (var def in DefDatabase<ResearchProjectDef>.AllDefs)
             {
-                if (def.techLevel != techLevel) continue;
+                if (techLevel.HasValue && def.techLevel != techLevel.Value) continue;
                 if (ShouldSkipResearchProject(def)) continue;
                 float original = originalResearchCosts.TryGetValue(def, out float orig) ? orig : def.baseCost;
                 totalTechs++;
-                totalPoints += ComputeAdjustedCost(original, techLevel);
+                totalPoints += ComputeAdjustedCost(original, def.techLevel);
             }
         }
 
