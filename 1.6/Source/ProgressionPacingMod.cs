@@ -41,13 +41,10 @@ namespace ProgressionPacing
         private const int AddonMaxValue = 99999999;
 
         private static readonly Color ResetButtonColor = new Color(0.48f, 0.12f, 0.12f);
-        internal static readonly Color CloseButtonColor = new Color(0.50f, 0.62f, 0.78f);
-        internal static bool StyleCloseButton;
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
             base.DoSettingsWindowContents(inRect);
-            StyleCloseButton = true;
             ProgressionPacingModSettings.EnsureDictionaries();
             if (Time.frameCount > lastSettingsFrame + 1)
             {
@@ -305,7 +302,7 @@ namespace ProgressionPacing
             questBuffers[bufferKey] = buffer;
         }
 
-        internal static bool DrawColoredButton(Rect rect, string label, Color background, Color textColor)
+        private static bool DrawColoredButton(Rect rect, string label, Color background, Color textColor)
         {
             if (Event.current.type == EventType.Repaint)
             {
