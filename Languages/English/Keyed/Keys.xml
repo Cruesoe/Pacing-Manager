@@ -23,7 +23,7 @@
   <PP_CurrentStorytellerNamed>Current Storyteller: {0}</PP_CurrentStorytellerNamed>
   <PP_CurrentStorytellerTip>These quest settings apply only to the storyteller running this colony. Other storytellers keep their vanilla timing.</PP_CurrentStorytellerTip>
   <PP_ResearchSectionTip>Change how expensive research is for each tech era.</PP_ResearchSectionTip>
-  <PP_ResearchResetTip>Restore research multipliers, add-ons, rounding, and gravdata exclusion to defaults.</PP_ResearchResetTip>
+  <PP_ResearchResetTip>Restore research multipliers, add-ons, rounding, tech level cost adjustment, and gravdata exclusion to defaults.</PP_ResearchResetTip>
   <PP_ResearchEraTip>Settings on this block apply to {0} research projects.</PP_ResearchEraTip>
   <PP_ResearchTotalsTip>Live count of techs in this era and their total cost with your current multiplier, add-on, and rounding.</PP_ResearchTotalsTip>
   <PP_ResearchAllTotals>Total: {0} projects    {1} points</PP_ResearchAllTotals>
@@ -31,6 +31,8 @@
   <PP_ResearchMultiplierTip>Multiplies the original cost of every research in this era. 100% is vanilla.</PP_ResearchMultiplierTip>
   <PP_ResearchAddonTip>Adds this many research points to every tech in this era after the multiplier is applied.</PP_ResearchAddonTip>
   <PP_ResearchRoundingTip>Rounds each tech's final cost to the nearest multiple of this number. 1 means no extra rounding.</PP_ResearchRoundingTip>
+  <PP_DisableTechLevelCostFactor>Disable tech level cost adjustment</PP_DisableTechLevelCostFactor>
+  <PP_DisableTechLevelCostFactorTip>Research above your faction's tech level costs the same as any other research. Without this, each tech level above yours adds 50% to the cost, which changes when your tech level changes.</PP_DisableTechLevelCostFactorTip>
   <PP_ExcludeGravdataTip>Leave Vanilla Gravship Expanded gravdata techs at their original cost.</PP_ExcludeGravdataTip>
   <PP_PowerSectionTip>Change how much power generators produce.</PP_PowerSectionTip>
   <PP_PowerResetTip>Restore power output and rounding to defaults.</PP_PowerResetTip>

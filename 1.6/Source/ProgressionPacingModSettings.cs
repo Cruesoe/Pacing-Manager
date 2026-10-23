@@ -64,6 +64,7 @@ namespace ProgressionPacing
         public static float powerOutputMultiplier = 1f;
         public static int powerOutputRoundingMultiple = 1;
         public static bool excludeGravdata;
+        public static bool disableTechLevelCostFactor;
 
         public static Dictionary<string, QuestPacingValues> questPacingByComp = new Dictionary<string, QuestPacingValues>();
 
@@ -104,6 +105,7 @@ namespace ProgressionPacing
             Scribe_Values.Look(ref powerOutputMultiplier, "powerOutputMultiplier", 1f);
             Scribe_Values.Look(ref powerOutputRoundingMultiple, "powerOutputRoundingMultiple", 1);
             Scribe_Values.Look(ref excludeGravdata, "excludeGravdata");
+            Scribe_Values.Look(ref disableTechLevelCostFactor, "disableTechLevelCostFactor");
             Scribe_Collections.Look(ref questPacingByComp, "questPacingByComp", LookMode.Value, LookMode.Deep);
             Scribe_Collections.Look(ref questGeneratorEraRanges, "questGeneratorEraRanges", LookMode.Value, LookMode.Deep);
             Scribe_Collections.Look(ref questChainDelayRanges, "questChainDelayRanges", LookMode.Value, LookMode.Value);
@@ -214,6 +216,7 @@ namespace ProgressionPacing
             techLevelRoundingMultiples = CreateDefaultRoundingMultiples();
             techLevelAddons = CreateDefaultAddons();
             excludeGravdata = false;
+            disableTechLevelCostFactor = false;
         }
 
         public static void ResetPowerSettings()

@@ -165,6 +165,7 @@ namespace ProgressionPacing
                 if (techLevel == TechLevel.Undefined) continue;
                 DrawEraRow(listing, techLevel);
             }
+            listing.CheckboxLabeled("PP_DisableTechLevelCostFactor".Translate(), ref ProgressionPacingModSettings.disableTechLevelCostFactor, "PP_DisableTechLevelCostFactorTip".Translate());
             if (ModsConfig.IsActive("vanillaexpanded.gravship"))
             {
                 listing.CheckboxLabeled("PP_ExcludeGravdata".Translate(), ref ProgressionPacingModSettings.excludeGravdata, "PP_ExcludeGravdataTip".Translate());
