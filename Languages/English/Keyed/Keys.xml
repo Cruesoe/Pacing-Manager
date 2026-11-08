@@ -51,6 +51,7 @@
   <PP_QuestGen_AlphaBooksLibrary>Alpha Books: Ruined libraries</PP_QuestGen_AlphaBooksLibrary>
   <PP_QuestGen_LeviathanSandworm>Leviathans: Sandworm</PP_QuestGen_LeviathanSandworm>
   <PP_QuestGen_LeviathanHiveLord>Leviathans: Hive Lord</PP_QuestGen_LeviathanHiveLord>
+  <PP_QuestGen_VFEM2SiegeCamp>Vanilla Factions Expanded - Medieval 2: Siege camp</PP_QuestGen_VFEM2SiegeCamp>
   <PP_QuestGenDelayRange>Extra delay: {0} days</PP_QuestGenDelayRange>
   <PP_QuestGenDelayRangeTip>Once this chain's first quest is otherwise ready to fire, wait a random number of days in this range on top of that before it actually arrives. Set both to 0 to disable this extra delay.</PP_QuestGenDelayRangeTip>
   <PP_RuinsSection>Ruins</PP_RuinsSection>

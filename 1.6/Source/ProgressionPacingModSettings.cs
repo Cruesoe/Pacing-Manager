@@ -75,6 +75,7 @@ namespace ProgressionPacing
             new QuestGeneratorDef { key = "Abooks_OpportunitySite_RuinedLibrary", modPackageId = "sarg.alphabooks", labelKey = "PP_QuestGen_AlphaBooksLibrary" },
             new QuestGeneratorDef { key = "SandWorm_LeviathanQuest", modPackageId = "chezhou.creature.sandworm", labelKey = "PP_QuestGen_LeviathanSandworm" },
             new QuestGeneratorDef { key = "HiveLord_SyndicateHunt", modPackageId = "chezhou.creature.hivelord", labelKey = "PP_QuestGen_LeviathanHiveLord" },
+            new QuestGeneratorDef { key = "VFEM2_OpportunitySite_SiegeCamp", modPackageId = "OskarPotocki.VFE.Medieval2", labelKey = "PP_QuestGen_VFEM2SiegeCamp" },
         };
 
         public static Dictionary<string, QuestGeneratorEraRange> questGeneratorEraRanges = new Dictionary<string, QuestGeneratorEraRange>();

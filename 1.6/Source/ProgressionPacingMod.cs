@@ -22,6 +22,7 @@ namespace ProgressionPacing
             harmony.PatchAll();
             QuestChainCompat.ApplyPatch(harmony);
             RealRuinsCompat.ApplyPatch(harmony);
+            LeviathansCompat.ApplyPatch(harmony);
         }
 
         private float scrollHeight = 0f;
